@@ -2,16 +2,18 @@ package com.example.sihdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.sihdemo.databinding.ActivityMainBinding
+import com.google.android.material.button.MaterialButtonToggleGroup
 import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
 
     lateinit private var mBinding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
@@ -23,5 +25,14 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.container,className,args)
             addToBackStack(null)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
     }
 }
