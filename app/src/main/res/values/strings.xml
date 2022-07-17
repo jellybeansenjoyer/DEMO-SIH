@@ -18,4 +18,10 @@
     <string name="login_menuitem">Login</string>
     <string name="register">Register</string>
     <string name="error">Error</string>
+    <string name="seekers">Seekers</string>
+    <string name="revenue">Revenue</string>
+    <string name="panel">Panel</string>
+    <string name="revaluation">Revaluation</string>
+    <string name="s_u_s">S.U.S</string>
+    <string name="verified">Verified</string>
 </resources>

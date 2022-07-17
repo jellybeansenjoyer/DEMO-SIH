@@ -71,18 +71,21 @@
         app:layout_constraintVertical_bias="0.06999999">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/seeker_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/seeker" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/admin_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/admin" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/provider_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

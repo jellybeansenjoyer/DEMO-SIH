@@ -18,7 +18,7 @@ class AuthFragment : Fragment() {
 
     lateinit private var mBinding: FragmentAuthBinding
     lateinit private var mToggleButtonGroup: MaterialButtonToggleGroup
-
+    private var state:Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +41,13 @@ class AuthFragment : Fragment() {
         }
         mBinding.materialButtonLogin.setOnClickListener {
             if(mToggleButtonGroup.checkedButtonId!=-1){
-                startActivity(Intent(requireContext(),CenterActivity::class.java))
+                val intent = Intent(requireContext(),CenterActivity::class.java)
+                when(mToggleButtonGroup.checkedButtonId){
+                    R.id.admin_button-> intent.putExtra("type",2)
+                    R.id.provider_button->intent.putExtra("type",3)
+                    R.id.seeker_button->intent.putExtra("type",1)
+                }
+                startActivity(intent)
             }else{
                 Toast.makeText(activity,"User Type is Required",Toast.LENGTH_SHORT).show()
             }

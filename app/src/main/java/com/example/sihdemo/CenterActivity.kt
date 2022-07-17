@@ -14,10 +14,24 @@ class CenterActivity : AppCompatActivity() {
     lateinit private var mDrawer: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var menuIdentifier:Int = -9999
+        intent.getIntExtra("type",-9999).let{
+            menuIdentifier = it
+        }
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_center)
         val toolbar = mBinding.toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
         mDrawer = mBinding.drawerLayout
+        mBinding.navView.apply{
+            menu.clear()
+            when(menuIdentifier){
+                1-> inflateMenu(R.menu.menu)
+                2-> inflateMenu(R.menu.menu_admin)
+                3->inflateMenu(R.menu.menu_stake)
+            }
+        }
         val toggle = ActionBarDrawerToggle(this,mDrawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close)
         mDrawer.addDrawerListener(toggle)
         toggle.syncState()
