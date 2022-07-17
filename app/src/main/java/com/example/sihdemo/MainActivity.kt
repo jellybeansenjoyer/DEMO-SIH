@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     fun <T: Fragment> inflateFragment(className:Class<T>,args:Bundle?=null){
         supportFragmentManager.commit{
             replace(R.id.container,className,args)
-            addToBackStack(null)
         }
     }
 

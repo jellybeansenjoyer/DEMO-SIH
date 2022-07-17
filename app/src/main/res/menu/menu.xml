@@ -14,7 +14,7 @@
         <menu>
             <item android:id="@+id/login_item"
                 android:icon="@drawable/ic_login"
-                android:title="@string/login_menu"/>
+                android:title="@string/login_menuitem"/>
             <item android:id="@+id/register_item"
                 android:icon="@drawable/ic_register"
                 android:title="@string/register"/>

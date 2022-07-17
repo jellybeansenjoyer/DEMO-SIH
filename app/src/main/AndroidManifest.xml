@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SIHDemo">
+        <activity android:name=".CenterActivity">
+        </activity>
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
